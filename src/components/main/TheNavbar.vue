@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="shadow">
     <div class="container nav-container">
       <router-link to="/" class="brand">Where in the world?</router-link>
       <div class="switch">

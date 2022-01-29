@@ -64,6 +64,9 @@ a{
   padding: 0 40px;
   margin: 0 auto;
 }
+.shadow {
+  box-shadow: 0 0 8px 3px rgba(26, 26, 26, 0.1);
+}
 
 @media screen and (min-width: 1440px) {
   .container {
