@@ -7,8 +7,6 @@
       </div>
       <transition>
         <div v-if="dataStatus">
-          <!-- {{ countries }} -->
-          <!-- {{ dataStatus }} -->
           <div class="row">
             <div class="col" v-for="country in countries" :key="country.area">
               <base-card
@@ -29,7 +27,9 @@
           </div>
         </div>
       </transition>
-      <p v-if="!dataStatus">Loading...</p>
+      <div v-if="!dataStatus">
+        <base-spinner></base-spinner>        
+      </div>
     </div>
   </section>
 </template>
@@ -44,7 +44,6 @@ export default {
   components: {
     SearchInput,
     RegionSelect,
-    // BaseCard
   },
   computed: {
     countries() {
