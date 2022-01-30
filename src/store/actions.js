@@ -8,9 +8,14 @@ export default {
       context.commit('setCountries', responseData);
       context.commit('dataStatus', true);
     } else {
+      // show loading spinner again
+      context.commit('dataStatus', false);
       // apply filter by region
-      console.log('Ovo je kad je poslat payload');
-      console.log(payload);
+      const response = await fetch(`https://restcountries.com/v3.1/region/${payload}`);
+      const responseData = await response.json();
+
+      context.commit('setCountries', responseData);
+      context.commit('dataStatus', true);
     }
   }
 };

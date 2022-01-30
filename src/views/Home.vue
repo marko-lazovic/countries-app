@@ -6,8 +6,9 @@
         <region-select></region-select>
       </div>
       <transition>
-        <div>
+        <div v-if="dataStatus">
           <!-- {{ countries }} -->
+          <!-- {{ dataStatus }} -->
           <div class="row">
             <div class="col" v-for="country in countries" :key="country.area">
               <base-card

@@ -94,7 +94,7 @@ strong{
 }
 .v-enter-active,
 .v-leave-active {
-  transition: all .2s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 .v-enter-to,
 .v-leave-from {

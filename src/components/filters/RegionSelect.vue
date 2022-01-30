@@ -29,7 +29,8 @@ export default {
       this.isListVisible = !this.isListVisible;
     },
     selectRegion(region) {
-      console.log(region);
+      const reg = region.toLowerCase();
+      this.$store.dispatch('getCountries', reg);
       this.isListVisible = false;
     },
   },
