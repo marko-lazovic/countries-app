@@ -9,6 +9,7 @@
       id="search"
       class="form-control"
       placeholder="Search for a country..."
+      @input="filterData"
       v-model.trim="userInput"
     />
   </div>
@@ -21,6 +22,13 @@ export default {
       userInput: "",
     };
   },
+  methods: {
+    filterData() {
+      // console.log(this.userInput);
+      const userInputTLC = this.userInput.toLowerCase();
+      this.$store.dispatch('filterData', userInputTLC);
+    }
+  }
 };
 </script>
 

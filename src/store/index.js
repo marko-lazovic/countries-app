@@ -7,7 +7,8 @@ export default createStore({
   state() {
     return {
       countries: [],
-      isDataFetched: false
+      filteredData: [],
+      isDataFetched: false,
     };
   },
   mutations,

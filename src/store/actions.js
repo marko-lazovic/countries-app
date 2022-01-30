@@ -17,5 +17,8 @@ export default {
       context.commit('setCountries', responseData);
       context.commit('dataStatus', true);
     }
+  },
+  filterData(context, payload) {
+    context.commit('setFilteredData', payload);
   }
 };
