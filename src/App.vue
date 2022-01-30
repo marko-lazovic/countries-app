@@ -37,6 +37,9 @@
 /* Vars */
 :root {
   --main-font-family: 'Nunito Sans', sans-serif;
+  --grid-padding: 40px;
+  --row-margin: -40px;
+  --col-margin: 80px; 
   --dark-blue: hsl(209, 23%, 22%);
   --darker-blue: hsl(207, 26%, 17%);
   --darkest-blue: hsl(200, 15%, 8%);
@@ -57,18 +60,56 @@ body {
 }
 a{
   text-decoration: none;
+  color: var(--white);
   transition: color 0.2s ease-in-out;
+  &:hover {
+    color: var(--dark-gray);
+  }
+}
+strong{
+  font-weight: 600;
 }
 .container {
   width: 100%;
-  padding: 0 40px;
+  padding: 0 var(--grid-padding);
   margin: 0 auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 var(--row-margin);
+}
+.col {
+  display: block;
+  width: 100%;
+  padding: 0 var(--grid-padding);
+  margin-bottom: var(--col-margin);
 }
 .shadow {
   box-shadow: 0 0 8px 3px rgba(26, 26, 26, 0.1);
 }
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+.v-enter-active,
+.v-leave-active {
+  transition: all .2s ease-in-out;
+}
+.v-enter-to,
+.v-leave-from {
+  opacity: 1;
+}
 
-@media screen and (min-width: 1440px) {
+
+/* Mediaqueries */
+@media screen and (min-width: 992px) {
+  .col {
+    width: 25%;
+  }
+}
+
+@media screen and (min-width: 1440px) {  
   .container {
     max-width: 1360px;
   }
