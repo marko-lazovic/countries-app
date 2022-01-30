@@ -5,6 +5,9 @@
         <search-input></search-input>
         <region-select></region-select>
       </div>
+      <div class="not-found" :class="{visible: dataNotFound}">
+        <h3>No such country found, sorry.</h3>
+      </div>
       <transition>
         <div v-if="dataStatus && !dataNotFound">
           <div class="row">
@@ -27,9 +30,6 @@
           </div>
         </div>
       </transition>
-      <div v-if="dataNotFound" class="notFound">
-        <h3>No such country found, sorry.</h3>
-      </div>
       <div v-if="!dataStatus">
         <base-spinner></base-spinner>        
       </div>
@@ -57,7 +57,8 @@ export default {
     },
     dataNotFound() {
       const notFound = this.countries;
-      return notFound.length === 0 ? true : false;
+      const status = this.dataStatus;      
+      return status && notFound.length === 0 ? true : false;
     }
   },
   methods: {
@@ -93,6 +94,14 @@ h3 {
   line-height: 1;
   li {
     padding: 5px 0;
+  }
+}
+.not-found {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  &.visible {
+    height: 18px;
   }
 }
 </style>
