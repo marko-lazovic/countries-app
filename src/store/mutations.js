@@ -13,5 +13,11 @@ export default {
     } else {
       state.filteredData = state.countries.slice();
     }
+  },
+  setSingleCountry(state, payload) {    
+    state.singleCountry = payload;
+  },
+  setSingleCountryDataStatus(state, payload) {
+    state.isSingleCountryDataFetched = payload;
   }
 };

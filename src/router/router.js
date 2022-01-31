@@ -8,9 +8,10 @@ const routes = [
     component: Home
   },  
   {
-    path: '/country/:id',
+    path: '/country/:name',
     name: 'Country',    
-    component: () => import('../views/SingleCountry.vue')
+    component: () => import('../views/SingleCountry.vue'),
+    props: true,
   }
 ]
 

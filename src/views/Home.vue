@@ -15,10 +15,10 @@
               <base-card
                 :imgSrc="country.flags.svg"
                 :imgAlt="country.name.common + ' flag'"
-                :imgLink="'/country/' + country.cca2"
+                :imgLink="'/country/' + country.name.common"
               >
                 <h3>
-                  <router-link :to="'/country/' + country.cca2">{{ country.name.common }}</router-link>                  
+                  <router-link :to="'/country/' + country.name.common">{{ country.name.common }}</router-link>                  
                 </h3>
                 <ul class="country-details">
                   <li><strong>Population:</strong> {{ country.population }}</li>
@@ -31,7 +31,7 @@
         </div>
       </transition>
       <div v-if="!dataStatus">
-        <base-spinner></base-spinner>        
+        <base-spinner></base-spinner>
       </div>
     </div>
   </section>

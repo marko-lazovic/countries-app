@@ -7,5 +7,11 @@ export default {
   },
   dataStatus(state) {
     return state.isDataFetched;
-  },  
+  },
+  singleCountry(state) {
+    return state.singleCountry;
+  },
+  singleCountryDataStatus(state) {
+    return state.isSingleCountryDataFetched;
+  }
 };

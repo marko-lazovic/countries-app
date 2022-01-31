@@ -35,6 +35,7 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+  background: var(--dark-blue);
 }
 img {
   display: block;

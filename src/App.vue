@@ -86,7 +86,34 @@ strong{
   margin-bottom: var(--col-margin);
 }
 .shadow {
-  box-shadow: 0 0 8px 3px rgba(26, 26, 26, 0.1);
+  box-shadow: 0 0 8px 3px rgba(26, 26, 26, 0.2);
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  min-width: 100px;
+  border: none;
+  border-radius: 5px;
+  background: var(--dark-blue);
+  color: var(--white);
+  padding: 9px 10px;
+  min-width: 100px;
+  font-family: var(--main-font-family);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  &:hover {
+    background: var(--darkest-blue);
+    color: var(--very-light-gray);
+  }
+  &.btn-large{
+    font-size: 14px;
+    padding: 13px 26px;
+    min-width: 135px;
+  }
 }
 .v-enter-from,
 .v-leave-to {

@@ -9,6 +9,8 @@ export default createStore({
       countries: [],
       filteredData: [],
       isDataFetched: false,
+      singleCountry: null,
+      isSingleCountryDataFetched: false
     };
   },
   mutations,
