@@ -82,4 +82,20 @@ export default {
 .back {
   margin-bottom: 55px;
 }
+
+/* Media queries */
+@media (max-width: 767px) {
+  #single {
+    padding: 40px 0;
+    .container {
+      padding: 0 30px;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #single{
+    padding: 40px 0;
+  }
+}
 </style>

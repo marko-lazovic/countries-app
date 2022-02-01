@@ -35,4 +35,17 @@ nav {
     margin-left: 5px;
   }
 }
+
+/* Mediaqueries */
+@media (max-width: 767px) {
+  .nav-container {
+    padding: 0 15px;
+  } 
+  .brand {
+    font-size: 16px;
+  }
+  .switch {
+    font-size: 12px;
+  }
+}
 </style>

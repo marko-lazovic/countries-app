@@ -92,4 +92,11 @@ ul {
   opacity: 1;
   top: 60px;
 }
+
+/* Media queries */
+@media (max-width: 767px) {  
+  .dropdown-wrap {
+    max-width: 200px;
+  }
+}
 </style>

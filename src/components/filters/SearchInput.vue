@@ -24,7 +24,6 @@ export default {
   },
   methods: {
     filterData() {
-      // console.log(this.userInput);
       const userInputTLC = this.userInput.toLowerCase();
       this.$store.dispatch('filterData', userInputTLC);
     }
@@ -68,7 +67,20 @@ export default {
   color: var(--white);
 }
 
-@media screen and (min-width: 1440px) {
+/* Media queries */
+@media (max-width: 767px) {
+  .wrap {
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .wrap {
+    max-width: 350px;
+  }
+}
+
+@media screen and (min-width: 992px) {
   .wrap {
     max-width: 480px;
   }

@@ -158,6 +158,18 @@ strong{
 
 
 /* Mediaqueries */
+@media (max-width: 767px) {
+  :root {
+    --col-margin: 40px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .col {
+    width: 50%;
+  }
+}
+
 @media screen and (min-width: 992px) {
   .col {
     width: 25%;

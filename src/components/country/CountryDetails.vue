@@ -26,7 +26,6 @@
           <router-link :to="'/country/' + border" class="btn shadow">{{ border }}</router-link>
         </li>
       </ul>
-      <!-- {{ borderCountries }} -->
     </div>
   </div>
 </template>
@@ -69,7 +68,6 @@ export default {
       this.languages = values.toString().replace(/,(?=[^\s])/g, ", ");
     },
     getBorderCountries() {
-      // console.log('getBorderCountries triggered');
       this.$store.dispatch("getCountries");
       const borders = this.country.borders;
       this.$store.dispatch('getBorderCountries', borders);
@@ -80,8 +78,6 @@ export default {
     this.getCurrencies();
     this.getLanguages();
     this.getBorderCountries();
-    // console.log('borders');
-    // console.log(this.country);
   },
   watch: {
     $route() {
@@ -135,6 +131,49 @@ p {
   width: 70%;
   li {
     margin: 0 5px 10px;
+  }
+}
+
+/* Media queries */
+@media (max-width: 767px) {
+  .country-details {
+    padding-left: 0;
+  }
+  .details {
+    flex-direction: column;
+    div {
+      &:first-child {
+        margin-bottom: 40px;
+      }
+    }
+  }
+  .border-countries {
+    flex-direction: column;
+  }
+  p {
+    margin: 0 0 15px;
+  }
+  .border-countries-list {
+    width: 100%;
+    margin: 0 -5px;
+    .btn {
+      font-size: 12px;
+      min-width: 95px;
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .country-details {
+    padding-left: 0;
+  }
+  .details {
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1024px) {
+  .country-details {
+    padding-left: 15px;
   }
 }
 </style>

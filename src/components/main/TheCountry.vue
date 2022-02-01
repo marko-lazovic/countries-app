@@ -42,9 +42,12 @@ export default {
 }
 .cols {
   width: 100%;
+  &:first-child {
+    margin-bottom: 40px;
+  }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 992px){
   .cols {
     width: 48%;
   }

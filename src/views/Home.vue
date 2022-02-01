@@ -104,4 +104,24 @@ h3 {
     height: 18px;
   }
 }
+
+/* MEDIAQUERIES */
+@media (max-width: 767px) {
+  #home {
+    padding: 25px 0;
+  }
+  .filters-wrap {
+    margin-bottom: 35px;
+    flex-direction: column;
+    margin-left: -25px;
+    margin-right: -25px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1024px) {
+  h3,
+  .country-details {
+    line-height: 1.3;
+  }
+}
 </style>
