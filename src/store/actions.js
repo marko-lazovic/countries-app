@@ -21,18 +21,20 @@ export default {
   filterData(context, payload) {
     context.commit('setFilteredData', payload);
   },
-  async getSingleCountry(context, payload) {    
+  async getSingleCountry(context, payload) {
+    context.commit('setSingleCountryDataStatus', false);
     const response = await fetch(`https://restcountries.com/v3.1/name/${payload}`);
-    // console.log(response);
     if (response.ok) {
       const responseData = await response.json();
-      // console.log(responseData[0]);
-      const singleCountry = responseData[0];
+      const singleCountry = responseData[0];      
       context.commit('setSingleCountry', singleCountry);
       context.commit('setSingleCountryDataStatus', response.ok);
     } else {
       console.log('Something went wrong');
       context.commit('setSingleCountryDataStatus', response.ok);
     }
+  },
+  getBorderCountries(context, payload) {
+    context.commit('setBorderCountries', payload);
   }
 };

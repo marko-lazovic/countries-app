@@ -13,5 +13,8 @@ export default {
   },
   singleCountryDataStatus(state) {
     return state.isSingleCountryDataFetched;
+  },
+  borderCountries(state) {
+    return state.borderCountries;
   }
 };

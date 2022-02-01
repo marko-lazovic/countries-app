@@ -6,20 +6,24 @@
           <i class="fas fa-arrow-left"></i>
           Back
         </button>
-      </div>
+      </div>      
       <transition>
-        <div v-if="dataStatus">
-          {{ country }}
+        <div v-if="dataSingleStatus && dataStatus">
+          <the-country :country="country"></the-country>
         </div>
       </transition>
-      <div v-if="!dataStatus">
-        <base-spinner></base-spinner>
-      </div>
+      <transition>
+        <div v-if="!dataSingleStatus && !dataStatus">
+          <base-spinner></base-spinner>
+        </div>
+      </transition>
     </div>
   </section>
 </template>
 
 <script>
+import TheCountry from '@/components/main/TheCountry.vue';
+
 export default {
   props: {
     name: {
@@ -27,18 +31,34 @@ export default {
       required: true
     }
   },
+  components: {
+    TheCountry
+  },
+  data() {
+    return {
+      reloaded: false
+    };
+  },
   computed: {
     country() {
       return this.$store.getters.singleCountry;
     },
     dataStatus() {
+      return this.$store.getters.dataStatus;
+    },    
+    dataSingleStatus() {
       return this.$store.getters.singleCountryDataStatus;
     }
   },
   methods: {
     getCountry() {
-      const name = this.name.toLowerCase();
-      this.$store.dispatch('getSingleCountry', name);
+      if (!this.dataStatus) {
+        this.$store.dispatch("getCountries");
+      }
+      const name = this.$route.params.name;
+      if (name) {
+        this.$store.dispatch('getSingleCountry', name);
+      }
     },
     back() {
       this.$router.back();
@@ -46,6 +66,11 @@ export default {
   },
   created() {
     this.getCountry();
+  },
+  watch: {
+    $route() {
+      this.getCountry();
+    }
   }
 }
 </script>

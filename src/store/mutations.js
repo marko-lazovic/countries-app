@@ -19,5 +19,16 @@ export default {
   },
   setSingleCountryDataStatus(state, payload) {
     state.isSingleCountryDataFetched = payload;
+  },
+  setBorderCountries(state, payload) {
+    if (payload) {
+      const filtered = state.countries.filter(country => {
+        return payload.some(item => item === country.cca3);
+      })
+      const borders = filtered.map(item => item.name.common);
+      state.borderCountries = borders;
+    } else {
+      state.borderCountries = [];
+    }
   }
 };

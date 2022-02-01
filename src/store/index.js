@@ -10,7 +10,8 @@ export default createStore({
       filteredData: [],
       isDataFetched: false,
       singleCountry: null,
-      isSingleCountryDataFetched: false
+      isSingleCountryDataFetched: false,
+      borderCountries: [],
     };
   },
   mutations,
