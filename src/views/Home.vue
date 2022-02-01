@@ -30,20 +30,25 @@
           </div>
         </div>
       </transition>
-      <div v-if="!dataStatus">
+      <div v-if="!dataStatus && !serverError.isError">
         <base-spinner></base-spinner>
       </div>
+      <teleport to="body">
+        <transition>
+          <base-dialog v-if="serverError.isError" @close-dialog="hideDialog">
+            <p>{{ serverError.msg }}</p>
+          </base-dialog>
+        </transition>
+      </teleport>
     </div>
   </section>
 </template>
 
 <script>
-// @ is an alias to /src
 import SearchInput from "@/components/filters/SearchInput.vue";
 import RegionSelect from "@/components/filters/RegionSelect.vue";
 
 export default {
-  name: "Home",
   components: {
     SearchInput,
     RegionSelect,
@@ -59,16 +64,16 @@ export default {
       const notFound = this.countries;
       const status = this.dataStatus;      
       return status && notFound.length === 0 ? true : false;
+    },
+    serverError() {
+      return this.$store.getters.serverError;
     }
   },
   methods: {
-    getCountries() {
-      this.$store.dispatch("getCountries");
-    },
-  },
-  created() {
-    this.getCountries();
-  },
+    hideDialog() {
+      this.$store.dispatch('resetServerError');
+    }
+  }
 };
 </script>
 

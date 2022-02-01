@@ -13,10 +13,17 @@
         </div>
       </transition>
       <transition>
-        <div v-if="!dataSingleStatus && !dataStatus">
+        <div v-if="!dataSingleStatus && !dataStatus && !serverError.isError">
           <base-spinner></base-spinner>
         </div>
       </transition>
+      <teleport to="body">
+        <transition>
+          <base-dialog v-if="serverError.isError" @close-dialog="hideDialog">
+            <p>{{ serverError.msg }}</p>
+          </base-dialog>
+        </transition>
+      </teleport>
     </div>
   </section>
 </template>
@@ -48,6 +55,9 @@ export default {
     },    
     dataSingleStatus() {
       return this.$store.getters.singleCountryDataStatus;
+    },
+    serverError() {
+      return this.$store.getters.serverError;
     }
   },
   methods: {
@@ -62,6 +72,9 @@ export default {
     },
     back() {
       this.$router.back();
+    },
+    hideDialog() {
+      this.$store.dispatch('resetServerError');
     }
   },
   created() {

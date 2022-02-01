@@ -30,5 +30,9 @@ export default {
     } else {
       state.borderCountries = [];
     }
-  }
+  },
+  showServerError(state, payload) {
+    state.serverError.isError = payload.isError;
+    state.serverError.msg = payload.msg;
+  },
 };

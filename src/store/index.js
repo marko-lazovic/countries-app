@@ -12,6 +12,10 @@ export default createStore({
       singleCountry: null,
       isSingleCountryDataFetched: false,
       borderCountries: [],
+      serverError: {
+        isError: false,
+        msg: ''
+      }
     };
   },
   mutations,

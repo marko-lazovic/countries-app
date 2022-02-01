@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 
-import store from '../store/index.js';
+// import store from '../store/index.js';
 
 const routes = [
   {
@@ -14,14 +14,14 @@ const routes = [
     name: 'Country',    
     component: () => import('../views/SingleCountry.vue'),
     props: true,
-    beforeEnter(to, _, next) {
-      const checkName = store.getters.countries.find(item => item.name.common === to.params.name);
-      if (checkName === undefined) {
-        next('/not-found');
-      } else {
-        next();
-      }
-    }
+    // beforeEnter(to, _, next) {
+    //   const checkName = store.getters.countries.find(item => item.name.common === to.params.name);
+    //   if (checkName === undefined) {
+    //     next('/not-found');
+    //   } else {
+    //     next();
+    //   }
+    // }
   },
   {
     path: '/:notFound(.*)',

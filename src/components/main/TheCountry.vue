@@ -27,9 +27,6 @@ export default {
     CountryFlag,
     CountryDetails,
   },
-  created() {
-    console.log(this.country);
-  },
 };
 </script>
 

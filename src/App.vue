@@ -3,6 +3,19 @@
   <router-view/>
 </template>
 
+<script>
+export default {
+  methods: {
+    getCountries() {
+      this.$store.dispatch("getCountries");
+    },
+  },
+  created() {
+    this.getCountries();
+  },
+}
+</script>
+
 <style lang="scss">
 *, *::before, *::after {
   box-sizing: border-box;

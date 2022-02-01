@@ -16,5 +16,8 @@ export default {
   },
   borderCountries(state) {
     return state.borderCountries;
+  },
+  serverError(state) {
+    return state.serverError;
   }
 };
