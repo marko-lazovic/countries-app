@@ -39,7 +39,9 @@ export default {
 }
 img {
   display: block;
-  width: 100%;
+  width: 100%;  
+  height: 170px;
+  object-fit: cover;
 }
 .card-body {
   background: var(--dark-blue);
