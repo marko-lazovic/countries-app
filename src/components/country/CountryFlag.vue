@@ -1,5 +1,5 @@
 <template>
-  <div class="country-flag">
+  <div class="country-flag flag-shadow">
     <img :src="flagSrc" :alt="countryName + ' flag'" />
   </div>
 </template>
@@ -20,22 +20,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.country-flag {
-  background: rgba(26, 26, 26, 0.1);
-  border-radius: 10px;
-  padding: 20px;
-}
 img {
   display: block;
   width: 100%;
 }
+.flag-shadow {
+  box-shadow: 0 0 8px 15px rgba(26, 26, 26, 0.2);
+}
 
-/* Media queries */
+// /* Media queries */
 @media (max-width: 767px) {
-  .country-flag {
-    padding: 10px;
-    margin-left: -10px;
-    margin-right: -10px;
+  .flag-shadow {
+    box-shadow: 0 0 8px 8px rgba(26, 26, 26, 0.2);
   }
 }
 </style>

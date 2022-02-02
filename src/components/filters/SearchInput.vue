@@ -56,14 +56,14 @@ export default {
   outline: none;
   font-family: var(--main-font-family);
 }
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder { 
   color: var(--white);
-  opacity: 1; /* Firefox */
+  opacity: 1;
 }
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder { 
   color: var(--white);
 }
-::-ms-input-placeholder { /* Microsoft Edge */
+::-ms-input-placeholder {
   color: var(--white);
 }
 
