@@ -23,7 +23,7 @@
                 <ul class="country-details">
                   <li><strong>Population:</strong> {{ country.population }}</li>
                   <li><strong>Region:</strong> {{ country.region }}</li>
-                  <li><strong>Capital:</strong> {{ !!country.capital === true ? country.capital[0] : '-' }}</li>
+                  <li><strong>Capital:</strong> {{ !!country.capital ? country.capital[0] : '-' }}</li>
                 </ul>
               </base-card>
             </div>

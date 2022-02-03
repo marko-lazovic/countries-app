@@ -8,12 +8,12 @@
           <li><strong>Population:</strong> {{ country.population }}</li>
           <li><strong>Region:</strong> {{ country.region }}</li>
           <li><strong>Subregion:</strong> {{ country.subregion }}</li>
-          <li><strong>Capital:</strong> {{ country.capital[0] }}</li>
+          <li><strong>Capital:</strong> {{ !!country.capital ? country.capital[0] : '-' }}</li>
         </ul>
       </div>
       <div>
         <ul class="details-list">
-          <li><strong>Top Level Domain:</strong> {{ country.tld[0] }}</li>
+          <li><strong>Top Level Domain:</strong> {{ !!country.tld ? country.tld[0] : '-' }}</li>
           <li><strong>Currencies:</strong> {{ currencies }}</li>
           <li><strong>Languages:</strong> {{ languages }}</li>
         </ul>
